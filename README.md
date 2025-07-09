@@ -31,7 +31,7 @@ This application implements the following features to ensure a comfortable calli
 
 * **Communication Quality Assurance:**
   * **Jitter Buffer:** Implements a fixed-size jitter buffer to absorb network delay variations, reordering packets based on sequence numbers to smooth out playback timing.
-  * **Packet Loss Concealment (PLC):** Implements basic PLC by inserting silence when an expected packet is missing in the jitter buffer, thus mitigating audio dropouts.
+  * **Packet Loss Handling:** If an expected packet is missing from the jitter buffer (i.e., packet loss has occurred), a period of silence is inserted in its place. This is the most basic method for handling packet loss. While it results in an audio dropout, it prevents unexpected noise and ensures the program remains stable.
 
 * **Auxiliary Features:**
   * **Call Timer:** Displays the elapsed call duration, triggered by the reception of the first packet from the peer.
